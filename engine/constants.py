@@ -65,6 +65,32 @@ KNIGHT_DIRS = (
     WEST + WEST + SOUTH,    # left 2, down 1
 )
 
+# Castling bits
+WK = 1   # 0001  white kingside
+WQ = 2   # 0010  white queenside
+BK = 4   # 0100  black kingside
+BQ = 8   # 1000  black queenside
+
+# Piece <-> FEN character
+CHAR_TO_PIECE = {
+    # White pieces: uppercase, positive
+    "P": PAWN,
+    "N": KNIGHT,
+    "B": BISHOP,
+    "R": ROOK,
+    "Q": QUEEN,
+    "K": KING,
+    # Black pieces: lowercase, negative
+    "p": -PAWN,
+    "n": -KNIGHT,
+    "b": -BISHOP,
+    "r": -ROOK,
+    "q": -QUEEN,
+    "k": -KING,
+}
+
+PIECE_TO_CHAR = {value: key for key, value in CHAR_TO_PIECE.items()}
+
 
 # Helpers
 def square_from(file: int, rank: int) -> int:
