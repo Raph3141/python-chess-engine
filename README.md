@@ -2,7 +2,7 @@
 
 A UCI chess engine written from scratch in Python, built as a learning project using the [Chess Programming Wiki](https://www.chessprogramming.org/) as the main reference.
 
-> **Status:** early development. See the [roadmap](docs/ROADMAP.md) for the plan and progress.
+> **Status:** early development.
 
 ## Design
 
@@ -20,7 +20,6 @@ A UCI chess engine written from scratch in Python, built as a learning project u
 ```
 engine/      engine source code (board, move generation, search, ...)
 tests/       pytest test suite (planned)
-docs/        roadmap and notes
 main.py      entry point
 ```
 
