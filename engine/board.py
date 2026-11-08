@@ -1,4 +1,4 @@
-"""Board representation: state, FEN parsing, make/unmake move (Phase 2)."""
+"""Board representation: state, FEN parsing, make/unmake move."""
 
 from engine.constants import EMPTY, OFFBOARD, WHITE, BLACK, CASTLE_CHAR_TO_BIT, square_from, str_to_square
 
