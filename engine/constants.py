@@ -71,6 +71,8 @@ WQ = 2   # 0010  white queenside
 BK = 4   # 0100  black kingside
 BQ = 8   # 1000  black queenside
 
+CASTLE_CHAR_TO_BIT = {"K": WK, "Q": WQ, "k": BK, "q": BQ}
+
 # Piece <-> FEN character
 CHAR_TO_PIECE = {
     # White pieces: uppercase, positive
