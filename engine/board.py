@@ -1,6 +1,10 @@
 """Board representation: state, FEN parsing, make/unmake move."""
 
-from engine.constants import *
+from engine.constants import (
+    EMPTY, OFFBOARD, WHITE, BLACK,
+    CASTLE_CHAR_TO_BIT, CHAR_TO_PIECE,
+    square_from, str_to_square,
+)
 
 
 class Board:
@@ -26,6 +30,24 @@ class Board:
         self._clear()
 
         fields = fen.split()
+
+        rank, file = 7, 0
+        for c in fields[0]:
+            if c == "/":
+                rank -= 1
+                file = 0
+            elif c.isdigit():
+                file += int(c)
+            else:
+                piece = CHAR_TO_PIECE[c]
+                square = square_from(file, rank)
+                self.squares[square] = piece
+                if c == "K":
+                    self.king_sq[WHITE] = square
+                elif c == "k":
+                    self.king_sq[BLACK] = square
+                file += 1
+
         self.side = WHITE if fields[1] == "w" else BLACK
 
         self.castling = 0
