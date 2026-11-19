@@ -18,7 +18,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-**macOS / Linux**
+**macOS / Linux (terminal)**
 
 ```bash
 git clone https://github.com/Raph3141/python-chess-engine.git
